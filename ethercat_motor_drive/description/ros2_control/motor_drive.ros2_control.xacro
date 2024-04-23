@@ -21,7 +21,7 @@
           <param name="alias">0</param>
           <param name="position">0</param>
           <param name="mode_of_operation">8</param>
-          <param name="slave_config">$(find ethercat_motor_drive)/config/maxon_epos3_config.yaml</param>
+          <param name="slave_config">$(find ethercat_motor_drive)/config/elmo_gold_config.yaml</param>
         </ec_module>
       </joint>
     </ros2_control>
