@@ -1,0 +1,16 @@
+ros2 topic pub -r 1 /trajectory_controller/joint_trajectory trajectory_msgs/msg/JointTrajectory '{header: {stamp: {sec: 0, nanosec: 0}, frame_id: ""}, joint_names: ["joint_1","joint_2","joint_3","joint_4"], points: [{positions: [1.0,1.0,1.0,1.0], velocities: [0.0,0.0,0.0,0.0], accelerations: [0.0,0.0,0.0,0.0], time_from_start: {sec: 1, nanosec: 0}},{positions: [19000000.0,19000000.0,19000000.0,19000000.0], velocities: [0.0,0.0,0.0,0.0], accelerations: [0.0,0.0,0.0,0.0], time_from_start: {sec: 4, nanosec: 0}}]}'
+
+
+ros2 topic pub -r 1 /trajectory_controller/joint_trajectory trajectory_msgs/msg/JointTrajectory '{header: {stamp: {sec: 0, nanosec: 0}, frame_id: ""}, joint_names: ["joint_0","joint_1","joint_2","joint_3"], points: [{positions: [1.0,1.0,1.0,1.0], velocities: [0.0,0.0,0.0,0.0], accelerations: [0.0,0.0,0.0,0.0], time_from_start: {sec: 1, nanosec: 0}},{positions: [200000.0,200000.0,200000.0,200000.0], velocities: [0.0,0.0,0.0,0.0], accelerations: [0.0,0.0,0.0,0.0], time_from_start: {sec: 4, nanosec: 0}}]}'
+
+
+ros2 topic pub -r 0.2 /trajectory_controller/joint_trajectory trajectory_msgs/msg/JointTrajectory '{header: {stamp: {sec: 0, nanosec: 0}, frame_id: ""}, joint_names: ["joint_1"], points: [{positions: [19000000.0], velocities: [0.0], accelerations: [0.0], time_from_start: {sec: 1, nanosec: 0}}]}'
+
+ros2 topic pub -r 0.2 /trajectory_controller/joint_trajectory trajectory_msgs/msg/JointTrajectory '{header: {stamp: {sec: 0, nanosec: 0}, frame_id: ""}, joint_names: ["joint_1"], points: [{positions: [10.0], velocities: [0.0], accelerations: [0.0], time_from_start: {sec: 1, nanosec: 0}}]}'
+
+
+sudo ethercat download -t int16 -p 3 -a 0 0x6040 00 0x0080
+sudo ethercat download -t int16 -p 0 -a 0 0x6040 00 0x0080
+
+
+ros2 topic echo /joint_states

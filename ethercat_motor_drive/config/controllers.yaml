@@ -21,14 +21,21 @@ trajectory_controller:
     state_interfaces:
       - position
     joints:
+      - joint_0
       - joint_1
-
+      - joint_2
+      - joint_3
 velocity_controller:
   ros__parameters:
     joints:
+      - joint_0
       - joint_1
-
+      - joint_2
+      - joint_3
 effort_controller:
   ros__parameters:
     joints:
+      - joint_0
       - joint_1
+      - joint_2
+      - joint_3
